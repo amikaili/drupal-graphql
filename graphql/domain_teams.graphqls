@@ -1,0 +1,22 @@
+schema {
+  query: Query
+}
+
+type Query {
+  domainTeam(id: Int!): DomainTeam
+  domainTeams(
+    offset: Int = 0
+    limit: Int = 100
+  ): DomainTeamConnection!
+}
+
+type DomainTeam {
+  id: Int!
+  field_short_summary: String!
+  field_mailing_list_address: String
+}
+
+type DomainTeamConnection {
+  total: Int!
+  items: [DomainTeam!]
+}
