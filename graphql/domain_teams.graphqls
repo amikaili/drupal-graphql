@@ -14,6 +14,7 @@ type DomainTeam {
   id: Int!
   field_short_summary: String!
   field_mailing_list_address: String
+  field_team_description: String
 }
 
 type DomainTeamConnection {
