@@ -1,0 +1,22 @@
+schema {
+  query: Query
+}
+
+type Query {
+  subgroup(id: Int!): Subgroup
+  domainTeams(
+    offset: Int = 0
+    limit: Int = 100
+  ): SubgroupConnection!
+}
+
+type Subgroup {
+  id: Int!
+  field_subgroup_mission: String!
+  field_subgroup_leads: String
+}
+
+type SubgroupConnection {
+  total: Int!
+  items: [Subgroup!]
+}

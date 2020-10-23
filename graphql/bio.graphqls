@@ -1,0 +1,22 @@
+schema {
+  query: Query
+}
+
+type Query {
+  bio(id: Int!): Bio
+  bios(
+    offset: Int = 0
+    limit: Int = 100
+  ): BioConnection!
+}
+
+type Bio {
+  id: Int!
+  field_role_detailed: String!
+  field_workstream_role: String
+}
+
+type BioConnection {
+  total: Int!
+  items: [Bio!]
+}

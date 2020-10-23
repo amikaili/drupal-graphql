@@ -1,0 +1,22 @@
+schema {
+  query: Query
+}
+
+type Query {
+  workstream(id: Int!): Workstream
+  workstreams(
+    offset: Int = 0
+    limit: Int = 100
+  ): WorkstreamConnection!
+}
+
+type Workstream {
+  id: Int!
+  field_mission: String!
+  body: String
+}
+
+type WorkstreamConnection {
+  total: Int!
+  items: [Workstream!]
+}
