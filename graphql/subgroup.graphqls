@@ -4,7 +4,7 @@ schema {
 
 type Query {
   subgroup(id: Int!): Subgroup
-  domainTeams(
+  subgroups(
     offset: Int = 0
     limit: Int = 100
   ): SubgroupConnection!
